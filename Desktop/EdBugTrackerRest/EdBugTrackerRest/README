@@ -1,0 +1,51 @@
+
+Description:
+ Welcome to my simple bank bug tracker application.
+ Please see below for the sample curl commands.
+ 
+ Sincerely, 
+ Eduardo Becerra (Ed)
+ 
+Libraries used: 
+ H2 database
+ Spring Boot
+ Spring Web
+ Spring JPA
+ Devtools
+ 
+Tools used:
+ Eclipes 
+ 
+ 
+ 
+Once this application is running copy and paste the following curl commands to command prompt...
+
+Create bug:
+curl -X POST localhost:8080/bugTracker -H "Content-Type: application/json" -d "{\"bugDescription\":\"Application keeps freezing when using search bar.\"}"
+
+Create bug:
+curl -X POST localhost:8080/bugTracker -H "Content-Type: application/json" -d "{\"bugDescription\":\"The information is not saving.\"}"
+
+Update bugDescription by Id:
+curl -X PUT localhost:8080/bugTracker/1 -H "Content-Type: application/json" -d "{\"bugDescription\":\"It freezes for 10 minutes\"}"
+
+Update bugDescription by Id:
+curl -X PUT localhost:8080/bugTracker/1 -H "Content-Type: application/json" -d "{\"bugDescription\":\"It now freezes for 20 minutes\"}"
+
+Update bugResolution by Id (Will close the bug) :
+curl -X PUT localhost:8080/bugTracker/1 -H "Content-Type: application/json" -d "{\"resolution\":\"We just restarted the computer and it no longer freezes\"}"
+
+Get all open bugs:
+curl localhost:8080/bugTracker/status/Open
+
+Get all closed bugs:
+curl localhost:8080/bugTracker/status/Closed
+
+Get a bug by ID:
+curl localhost:8080/bugTracker/1
+
+Get all bugs:
+curl localhost:8080/bugTracker
+
+Delete a bug by ID:
+curl -X DELETE localhost:8080/bugTracker/2
